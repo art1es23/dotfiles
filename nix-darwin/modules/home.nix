@@ -16,10 +16,12 @@
     ../shared/home
     ../shared/home/alacritty.nix
     ../shared/home/git.nix
+    ../shared/home/kitty
     ../shared/home/starship.nix
-    ../shared/home/tmux.nix
-    ../shared/home/wezterm.nix
-    ../shared/home/zsh.nix
+    ../shared/home/tmux
+    ../shared/home/wezterm
+    ../shared/home/yazi
+    ../shared/home/zsh
     inputs.nix-colors.homeManagerModules.default
   ];
 
@@ -38,7 +40,7 @@
       sessionVariables = {
         EDITOR = "nvim";
         SHELL = "zsh";
-        TERMINAL = "wezterm";
+        TERMINAL = "kitty";
       };
       file = {
         ".config/nvim".source = ~/dotfiles/nvim;

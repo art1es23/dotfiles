@@ -1,5 +1,6 @@
 return {
   "christoomey/vim-tmux-navigator", -- tmux & split window navigation
+  "mrjones2014/smart-splits.nvim",
   "szw/vim-maximizer",
   "tpope/vim-sleuth",
   "mbbill/undotree",

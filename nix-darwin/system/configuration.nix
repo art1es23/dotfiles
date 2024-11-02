@@ -27,6 +27,7 @@
       openssh
       redis
       nodejs
+      ollama
     ];
   };
 
