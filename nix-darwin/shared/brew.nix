@@ -27,63 +27,72 @@
     };
   };
 
-  homebrew.enable = true;
-  homebrew.brews = [ "mas" "imagemagick" ];
+  homebrew = {
+    enable = true;
+    onActivation = {
+      cleanup = "zap";
+      upgrade = true;
+      autoUpdate = true;
+    };
 
-  # Applications are installed through Homebrew because there's a wider selection available
-  # on macOS and the applications tend to be more up-to-date.
-  # The other reason is that applications installed via Nix tend to break in the dock because
-  # of the way the volume mounts - it's been a while but from what I remember the icons weren't
-  # working correctly, or maybe it's that opening them on startup was having problems?
-  homebrew.casks = [
-    # NOTE: Homerow isn't available as a cask yet
+    brews = [ 
+      "mas"
+      "imagemagick"
+    ];
 
-    "1password"
-    "nordpass"
+    casks = [
+      # NOTE: Homerow isn't available as a cask yet
 
-    # Loosely, social platforms
-    "discord"
-    "telegram"
-    "microsoft-teams"
-    # "steam"
-    
-    # Development
-    "docker"
-    "wezterm"
-    "figma"
-    "utm" # VM on macOS
-    # "ngrock"
-    # "zed"
-    # "insomnia" # HTTP requests like Postman
-    
-    # Browsers
-    "firefox"
-    "google-chrome"
+      "1password"
+      "nordpass"
 
-    # Productivity
-    "obsidian"
-    "notion"
-    "raycast"
-    "deepl"
+      # Loosely, social platforms
+      "discord"
+      "telegram"
+      "microsoft-teams"
+      # "steam"
+      
+      # Development
+      "docker"
+      "figma"
+      "utm" # VM on macOS
+      # "ngrock"
+      # "zed"
+      # "insomnia" # HTTP requests like Postman
+      
+      # Browsers
+      "firefox"
+      "google-chrome"
 
-    # Additional
-    "appcleaner"
-    "shottr"
-    "keka"
-    "cursorcerer"
-    "plover"
-    "spotify"
-    "transmission"
-    "binance"
-    # "karabiner-elements" # Might make a module for this in the future...
-    # "iina"
-    # "obs"
-    # "font-meslo-lg-nerd-font"
-  ];
+      # Productivity
+      # "nikitabobko/tap/aerospace"
+      "obsidian"
+      "notion"
+      "raycast"
+      "deepl"
 
-  homebrew.onActivation = {
-    cleanup = "zap";
-    upgrade = true;
-    autoUpdate = true;
+      # utilities
+      "aldente" # battery management
+      "appcleaner"
+      "shottr"
+      "keka"
+      "cursorcerer"
+      "transmission"
+      "plover"
+
+      # Additional
+      "spotify"
+      "binance"
+      "meetingbar" # shows upcoming meetings
+      "eul" # mac monitoring
+      "wireshark" # network sniffer
+      "keycastr" # show keystrokes on screen
+      # "obs"
+    ];
+
+    taps = [
+      # default
+      "homebrew/bundle"
+    ];
   };
 }

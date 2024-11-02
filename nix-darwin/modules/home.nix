@@ -14,6 +14,7 @@
 {
   imports = [
     ../shared/home
+    ../shared/home/aerospace
     ../shared/home/alacritty.nix
     ../shared/home/git.nix
     ../shared/home/kitty
@@ -36,6 +37,8 @@
       homeDirectory = "/Users/qmpwwsd";
       packages = with pkgs; [
         (nerdfonts.override { fonts = [ "JetBrainsMono" "Meslo" "FiraCode"]; })
+        aerospace
+        jankyborders
       ];
       sessionVariables = {
         EDITOR = "nvim";
