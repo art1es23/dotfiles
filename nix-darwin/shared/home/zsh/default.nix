@@ -7,8 +7,9 @@
 
     oh-my-zsh = {
       enable = true;
-      theme = "robbyrussell";
+      # theme = "spaceship";
       plugins = [
+        "asdf"
         "git"
         "git-commit"
         "web-search"
@@ -34,28 +35,22 @@
       ];
     };
 
-    # plugins = [
-    #   {
-    #     name = "zsh-nix-shell";
-    #     file = "nix-shell.plugin.zsh";
-    #     src = pkgs.fetchFromGitHub {
-    #       owner = "chisui";
-    #       repo = "zsh-nix-shell";
-    #       rev = "v0.8.0";
-    #       sha256 = "1lzrn0n4fxfcgg65v0qhnj7wnybybqzs4adz7xsrkgmcsr0ii8b7";
-    #     };
-    #   }
-    # ];
-
     initExtra = builtins.readFile ./.zshrc;
 
     shellAliases = {
+      v = "nvim";
+      home = "z ~";
+      lss = "yazi";
+      gc = "git commit";
       ls = "eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions";
       ll = "ls -l";
       fk = "thefuck";
       darwin-build-flake = "nix build .#darwinConfigurations.qmpwwsd.system --impure";
       darwin-update-flake = "darwin-rebuild switch --dry-run --impure --flake .#qmpwwsd";
       home-update = "home-manager switch --flake .#qmpwwsd@qmpwwsd --impure";
+      "." = "z ..";
+      ".." = "z ../..";
+      "..." = "z ../../..";
     };
   };
 }

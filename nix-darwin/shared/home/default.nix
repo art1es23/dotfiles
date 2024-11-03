@@ -1,17 +1,10 @@
 { config, pkgs, ... }:
 {
   programs = {
-    zoxide = {
+    atuin = {
       enable = true;
       enableBashIntegration = true;
       enableFishIntegration = true;
-      enableZshIntegration = true;
-      options = [
-        "--cmd cd"
-      ]; 
-    };
-    eza = {
-      enable = true;
       enableZshIntegration = true;
     };
     bat = {
@@ -20,25 +13,44 @@
         theme = "Dracula";
       };
     };
-    fzf = {
+    direnv = {
+      enable = true;
+      enableBashIntegration = true;
+      enableFishIntegration = true;
+      enableZshIntegration = true;
+    };
+    eza = {
       enable = true;
       enableZshIntegration = true;
     };
     fd = {
       enable = true;
     };
-    lazygit = {
-      enable = true;
-    };
-    thefuck = {
+    fzf = {
       enable = true;
       enableZshIntegration = true;
+    };
+    lazygit = {
+      enable = true;
     };
     ripgrep = {
       enable = true;
     };
     ssh = {
       enable = true;
+    };
+    thefuck = {
+      enable = true;
+      enableZshIntegration = true;
+    };
+    zoxide = {
+      enable = true;
+      enableBashIntegration = true;
+      enableFishIntegration = true;
+      enableZshIntegration = true;
+      options = [
+        "--cmd cd"
+      ]; 
     };
   };
 }

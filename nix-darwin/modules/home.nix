@@ -38,7 +38,10 @@
       packages = with pkgs; [
         (nerdfonts.override { fonts = [ "JetBrainsMono" "Meslo" "FiraCode"]; })
         aerospace
+        gum
         jankyborders
+        jq
+        neofetch
       ];
       sessionVariables = {
         EDITOR = "nvim";
