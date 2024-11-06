@@ -39,9 +39,11 @@
         (nerdfonts.override { fonts = [ "JetBrainsMono" "Meslo" "FiraCode"]; })
         aerospace
         gum
+        heroku
         jankyborders
         jq
         neofetch
+        sketchybar
       ];
       sessionVariables = {
         EDITOR = "nvim";

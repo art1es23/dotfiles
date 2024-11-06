@@ -56,6 +56,15 @@
         show-process-indicators = true;
         enable-spring-load-actions-on-all-items = true;
         mouse-over-hilite-stack = true;
+        persistent-apps = [
+          "${pkgs.kitty}/Applications/kitty.app"
+          "/Applications/Firefox.app"
+          "/Applications/Google Chrome.app"
+          "/Applications/Notion.app"
+          "${pkgs.obsidian}/Applications/Obsidian.app"
+          "/Applications/Telegram.app"
+          "/System/Applications/Mail.app"
+        ];
       };
       WindowManager = {
         # GloballyEnabled = true;
@@ -129,6 +138,10 @@
       inactive_color = "gradient(top_left=0xaa45c4c0,bottom_right=0xaaba3aa5)";
       hidpi = true;
       ax_focus = true;
+    };
+    sketchybar = {
+      enable = true;
+      package = pkgs.sketchybar;
     };
   };
 
